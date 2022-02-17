@@ -18,7 +18,6 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    console.log(error);
     return Promise.reject(error)
   }
 )
@@ -26,7 +25,6 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-    console.log('res::',res);
     if(res.code !== 0) {
       Message({
         message: res.msg || '请求出错',

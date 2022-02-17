@@ -99,9 +99,6 @@ export default {
       this.setQueryParams(pageParams)
       this.initList()
     },
-    parseQuery(){
-      console.log(this.$route.query);
-    },
     getCategoryList(){
       getCategoryList().then(data => {
         if(data.code === 0){
@@ -113,7 +110,6 @@ export default {
     initList(){
        getList(this.formInline).then(res => {
         if(res.code === 0){
-          console.log(res.data);
           this.blogList = res.data.result
           this.total = res.data.total
         }
@@ -155,7 +151,10 @@ export default {
             duration: 60 * 60
           })
         }).catch(err => {
-          console.log(err)
+          this.$message({
+            type:'error',
+            message: err
+          })
         })
       })
       

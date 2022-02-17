@@ -31,8 +31,8 @@ export default {
       }
     };
     var validatorPass = (rule, value, callback) => {
-      if(value.length > 6) {
-        callback(new Error('密码不能大于六位'))
+      if(value.length < 6) {
+        callback(new Error('密码不能小于六位'))
       }else if(value.length === 0) {
         callback(new Error('密码不能为空'))
       }else {
@@ -71,9 +71,7 @@ export default {
                  this.$message.error(data.errMsg);
               }
             })
-          
           } else {
-            console.log('error submit!!');
             return false;
           }
         });

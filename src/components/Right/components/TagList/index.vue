@@ -1,5 +1,5 @@
 <template>
-  <div class="friendLint-list" @scroll="hhh">
+  <div class="friendLint-list" >
     <tab-image :textContent= "title" :top="top"></tab-image>
      <div class="list-content">
         <el-row class="el-row-item">
@@ -27,13 +27,8 @@ export default {
     TabImage
   },
    mounted(){
-     let height = document.getElementsByClassName('friendLint-list')[0].offsetTop
-     console.log("height:",height);
   },
   methods:{
-    hhh(e){
-      console.log(e);
-    }
   }
 }
 </script>

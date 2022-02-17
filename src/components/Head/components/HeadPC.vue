@@ -64,7 +64,6 @@ import {getToken} from '@/utils/auth'
             this.generateMenus(item.children,item.path)
           }
         })
-        console.log("menus",this.menus);
       },
       handleSelect() {
         this.$emit("hiddenHeader")

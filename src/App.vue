@@ -18,9 +18,6 @@ export default {
 				isRouterAlive:true
 			}
 		},
-		created(){
-			console.log(process.env);
-		},
 		methods:{
 			reload(){
 				this.isRouterAlive=false

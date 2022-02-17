@@ -13,13 +13,12 @@ NProgress.configure({ showSpinner: false})
 // const whiteList = ['/login', '/', '/home/getDetail', '/home/blogList']
 
 router.beforeEach(async (to, from, next) => {
-  console.log('lili:',to);
+ 
   //显示进度条
   NProgress.start()
   document.title = getPageTitle(to.meta.title)
   //获取token
   const hasToken = getToken();
-  console.log('hasToken::',hasToken);
   let user_role = ''
   //如果token存在，说明用户已经登陆
   if(hasToken) { //已经登陆
@@ -48,7 +47,8 @@ router.beforeEach(async (to, from, next) => {
         next(false)
       }
     }).catch(err=> {
-      console.log("出错了：",err);
+      Message.error('出错了:',err)
+      next(from.path)
     })
     //再判断目标路由是否为login，如果是login，直接重定向到‘/’
   }else {
@@ -60,7 +60,8 @@ router.beforeEach(async (to, from, next) => {
       next()
       next(false)
     }).catch(err=> {
-      console.log("出错了：",err);
+      Message.error('出错了:',err)
+      next(from.path)
     })
   }
   

@@ -99,7 +99,6 @@ export default {
     getDetailById(){
       getDetail(this.$route.query.id,'','edit').then(data => {
         if(data.code === 0){
-          console.log(data.data);
           this.blogForm.content = data.data[0].content
           this.blogForm.title = data.data[0].title
           this.blogForm.category = data.data[0].categoryId
@@ -113,7 +112,6 @@ export default {
     this.img_file[pos] = $file;
     upload(formdata).then(res => {
       let _res = res.data;
-      console.log(_res);
        const url = _res.url
           this.$refs.md.$img2Url(
             pos,
@@ -137,10 +135,8 @@ export default {
       delete this.img_file[pos];
   },
   saveDraft() {
-    console.log(this.content);
   },
   save() {
-    console.log(this.blogForm);
     saveData({param: JSON.stringify(this.blogForm)}).then(res => {
       if(res.code === 0){
         this.$notify({
