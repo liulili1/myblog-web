@@ -86,8 +86,8 @@ export default {
       presentCommentId: '',
       commentList:[],
       currentId: 0,
-      adminUrl: require('../../assets/images/head_pic.jpeg'),
-      unkownUrl:require('../../assets/images/unknow.png'),
+      adminUrl: process.env.VUE_APP_BASE_API+'head_pic.jpeg',
+      unkownUrl: process.env.VUE_APP_BASE_API+'unknow.png',
       
     }
   },

@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
   outputDir: 'dist',
   /**
    * 静态资源打包路径

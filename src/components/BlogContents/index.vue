@@ -48,9 +48,7 @@ export default {
       require: true
     }
   },
-  created(){
-    console.log('content:',this.content);
-  },
+ 
   methods: {
     goDetail(id) {
       this.$router.replace({

@@ -64,9 +64,8 @@ export default {
   },
   methods:{
     initData(){
-      console.log("触发了");
       getBlogEvalInfo(this.blogId).then(data => {
-        console.log(data);
+   
         if(data.code === 0) {
           data.data.forEach(item => {
             if(item.type === 'watch' ){
@@ -74,10 +73,8 @@ export default {
             }else if(item.type === 'like'){
               this.likeNum = item.num
             }
-            console.log('this.watchNum123:::',this.watchNum);
           })
         }
-        console.log('this.watchNum:::',this.watchNum);
       })
     },
     likeClick(){
@@ -91,7 +88,7 @@ export default {
       })
     },
     goToComment(){
-     console.log(document.getElementById('webbox').focus());
+     document.getElementById('webbox').focus();
     }
   }
 }

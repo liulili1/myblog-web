@@ -22,9 +22,6 @@ export default {
       hiddenHeader(){
         this.$emit("hiddenHomeHeader")
       },
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
-      }
     }
 }
 </script>

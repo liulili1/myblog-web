@@ -11,7 +11,6 @@ import './promission'
 import '@/styles/index.scss'
 import '@/assets/css/reset.scss'
 
-console.log('main.js 执行了');
 // use
 Vue.use(mavonEditor)
 

@@ -60,8 +60,6 @@ export default {
     },
     initList(categoryId){
       getList({categoryId}).then(data => {
-        console.log("category:",categoryId);
-         console.log("data:",data);
         if(data.code === 0){
           this.activities = data.data.result
           this.activities = this.activities.map(item => {
