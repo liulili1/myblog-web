@@ -86,8 +86,8 @@ export default {
       presentCommentId: '',
       commentList:[],
       currentId: 0,
-      adminUrl: process.env.VUE_APP_BASE_API+'head_pic.jpeg',
-      unkownUrl: process.env.VUE_APP_BASE_API+'unknow.png',
+      adminUrl: process.env.VUE_APP_IMAGES+'head_pic.jpeg',
+      unkownUrl: process.env.VUE_APP_IMAGES+'unknow.png',
       
     }
   },

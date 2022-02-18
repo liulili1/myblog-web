@@ -1,7 +1,7 @@
 <template>
   <div class="about-box">
     <header>关于我</header>
-    <img src="../../assets/images/about_me2.jpeg" alt="">
+    <img src="@/assets/images/about_me2.jpeg" alt="">
     <div class="content">
       <p>大家好，我叫刘莉莉，90后小姐姐💖</p>
       <p>喜欢画画，喜欢美食，静若处子动若脱兔大概说的就是我吧😁</p>

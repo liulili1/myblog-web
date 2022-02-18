@@ -5,7 +5,7 @@ import { getToken } from "@/utils/auth";
 import store from "@/store"
 
 const service = axios.create({ // 创建一个axios实例，可以自定义配置
-  baseURL: process.env.VUE_APP_IMAGES,
+  baseURL: process.env.VUE_APP_BASE_API,
   timeout: 60000//
 })
 //拦截请求，在请求头中根据自己的需求加相应的配置，如token，

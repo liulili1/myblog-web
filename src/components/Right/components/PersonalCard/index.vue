@@ -1,6 +1,6 @@
 <template>
   <div class="personal-card">
-    <img src="../../../../assets/images/head_pic5.jpeg" alt="名片">
+    <img src="@/assets/images/head_pic5.jpeg" alt="名片">
     <div class="card-info">
       <span class="card-name">刘莉莉</span>
       <span class="card-occupation">前端工程师</span>

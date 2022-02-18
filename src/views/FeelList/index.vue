@@ -11,9 +11,9 @@
     <ul class="box-card" v-if="flag">
       <li>
         <span class="feel-icon">
-          <img src="../../assets/images/head_pic3.jpeg" alt="头像">
+          <img src="@/assets/images/head_pic3.jpeg" alt="头像">
         </span>
-        <span>今天下雨了，。。没有阳光了</span><img src="../../assets/images/head_pic1.jpeg" alt="心情说说">
+        <span>今天下雨了，。。没有阳光了</span><img src="@/assets/images/head_pic1.jpeg" alt="心情说说">
         <footer class="footer">
           <div class="el-row-top">
             <i class="evl-time">2022-12-3</i><el-link type="primary" :underline="false" class="el-link-item" @click="showEvalFlag=!showEvalFlag">评价(2)</el-link>

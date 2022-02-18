@@ -59,7 +59,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import url('../../assets/css/markdown.scss');
+@charset "UTF-8";
+@import "~@scss/css/markdown.scss";
 $icon_bg_color:#a7ddfa;
 $fn_color:#fff;
 .blog-content{
