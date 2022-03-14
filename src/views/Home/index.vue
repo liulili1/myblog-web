@@ -18,7 +18,7 @@
           <transition
             name="bounce"
         >
-             <img class="up" @click="goTop" v-show="isshow" src="../../assets/images/up2.jpeg" alt="">
+             <img class="up" @click="goTop" v-show="isshow" src="@/assets/images/up2.jpeg" alt="">
         </transition>
       </div>
 </template>
@@ -59,13 +59,11 @@ export default {
     }
   },
   mounted(){
-   if (window.history && window.history.pushState) {
-				history.pushState(null, null, document.URL)
-				window.addEventListener('popstate', this.hiddenHomeHeader, false)
-			}
    window.addEventListener('scroll',this.handleScroll,true)
   },
-  
+  destroyed(){
+    window.removeEventListener("scroll", this.handleScroll, true);
+  },
   methods:{
     hiddenHomeHeader(){
       document.getElementsByClassName('container')[0].scrollTop = 683

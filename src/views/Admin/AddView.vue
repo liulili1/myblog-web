@@ -2,7 +2,7 @@
     <div id="main">
       <header class="header">
         <el-button class="draftBtn" @click="saveDraft">保存为草稿</el-button>
-        <el-button type="success" @click="save">新增</el-button>
+        <el-button type="success" @click="save">{{isEdit?'编辑':'新增'}}</el-button>
       </header>
       <el-form ref="blogForm" v-model="blogForm" class="blogForm">
             <el-row>
@@ -31,7 +31,7 @@
     </div>  
 </template>
 <script>
-import {upload, saveData, getDetail, getCategoryList} from '@/api/blog'
+import {upload, saveData, getDetail, getCategoryList, editBlog} from '@/api/blog'
 export default {
   name: 'AddView',
   data() {
@@ -80,6 +80,11 @@ export default {
         subfield: true, // 单双栏模式
         preview: true // 预览
       }
+    }
+  },
+  computed:{
+    isEdit(){
+      return this.$route.query.isEdit
     }
   },
   created(){
@@ -137,20 +142,40 @@ export default {
   saveDraft() {
   },
   save() {
-    saveData({param: JSON.stringify(this.blogForm)}).then(res => {
-      if(res.code === 0){
-        this.$notify({
-          type: 'success',
-          title: '保存成功',
-          message: '上传成功'
-        })
-        this.$router.push({
-          path: '/admin/listView'
-        })
-      }
-    }).catch(err => {
-      console.log(err);
-    })
+    if(this.isEdit){
+      this.blogForm.id = this.$route.query.id
+      console.log(this.blogForm);
+      editBlog({param: JSON.stringify(this.blogForm)}).then(res => {
+            if(res.code === 0){
+              this.$notify({
+                type: 'success',
+                title: '保存成功',
+                message: '编辑成功'
+              })
+              this.$router.push({
+                path: '/admin/listView'
+              })
+            }
+          }).catch(err => {
+            console.log(err);
+          })
+    }else {
+      saveData({param: JSON.stringify(this.blogForm)}).then(res => {
+            if(res.code === 0){
+              this.$notify({
+                type: 'success',
+                title: '保存成功',
+                message: '上传成功'
+              })
+              this.$router.push({
+                path: '/admin/listView'
+              })
+            }
+          }).catch(err => {
+            console.log(err);
+          })
+    }
+    
   }
   }
 

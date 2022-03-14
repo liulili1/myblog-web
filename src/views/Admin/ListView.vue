@@ -41,6 +41,13 @@
             </template>
         </el-table-column>
         <el-table-column
+          prop="updateDate"
+          label="修改时间">
+          <template slot-scope="scope">
+              <p>{{ scope.row.updateDate | timeFilter }}</p>
+            </template>
+        </el-table-column>
+        <el-table-column
         fixed="right"
         label="操作"
         width="150">

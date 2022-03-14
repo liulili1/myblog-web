@@ -15,6 +15,13 @@ export function saveData(data) {
     data
   })
 }
+export function editBlog(data) {
+  return request({
+    url: '/blog/editBlog',
+    method: 'POST',
+    data
+  })
+}
 export function getList(query) {
   return request({
     url: '/blog/getList',
